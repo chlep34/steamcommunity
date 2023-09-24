@@ -214,7 +214,6 @@ function initChildWindow () {
   registerProtocolHandlers()
   hideCursor()
   moveWindowBounce()
-  setupFollowWindow()
   startVideo()
   detectWindowClose()
   triggerFileDownload()
@@ -795,15 +794,6 @@ function moveWindowBounce () {
 
     window.moveBy(vx, vy)
   }, TICK_LENGTH)
-}
-
-/**
- * Follow the user's mouse
- */
-function setupFollowWindow () {
-  document.addEventListener('mousemove', function (e) {
-    window.moveTo(e.screenX - (WIN_WIDTH / 2), e.screenY - (WIN_HEIGHT / 2))
-  })
 }
 
 /**
